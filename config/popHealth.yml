@@ -15,7 +15,7 @@ defaults: &defaults
   # add patient management link
   patient_management_enabled: true
   # title of the practice
-  practice_name: 'Northwestern Medicine'
+  practice_name: 'Intermountain Healthcare'
   disable_provider_filters: false
   ccr_system_name: popHealth
   # force the system to allow HTTP connections
@@ -32,11 +32,11 @@ development:
 
 test:
   <<: *defaults
-  default_user_approved: false
+  default_user_approved: true
   # we do not want to force unsecure when testing
   force_unsecure_communications: true
 
 production:
   <<: *defaults
-  default_user_staff_role: false
-  default_user_approved: false
+  default_user_staff_role: true
+  default_user_approved: true

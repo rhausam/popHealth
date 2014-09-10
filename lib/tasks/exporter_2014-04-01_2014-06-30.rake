@@ -1,6 +1,6 @@
 require 'hqmf-parser'
 
-namespace :export do
+namespace :export_20140401_20140630 do
   desc 'Generate QRDA CAT1 files for all patients, then copy them into sub-folders by HQMF_ID where each patient is part of the IPP for that measure.'
   task :cat1 do
     puts "Rails env: #{Rails.env}"
@@ -116,7 +116,7 @@ namespace :export do
     puts "Rails env: #{Rails.env}"
     puts "Exporting #{destination_dir}/#{filename}..."
     output = File.open(File.join(destination_dir, filename), "w")
-    output << exporter.export(measures, generate_header(Time.now), effective_date, Date.parse("2014-01-01"), Date.parse("2014-12-31"))
+    output << exporter.export(measures, generate_header(Time.now), effective_date, Date.parse("2014-04-01"), Date.parse("2014-06-30"))
     output.close
   end
 
